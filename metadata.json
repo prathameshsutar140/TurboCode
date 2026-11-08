@@ -1,0 +1,6 @@
+{
+  "name": "TurboCode IDE",
+  "description": "Professional C/C++ Development Environment with Classic Turbo C++ & Modern Modes, Real GCC/G++ Toolchain, and Interactive Educational Suite",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

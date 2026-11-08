@@ -1,0 +1,34 @@
+appId: com.turbocode.ide
+productName: TurboCode IDE
+copyright: Copyright © 2026 TurboCode IDE Authors
+
+directories:
+  output: dist-electron
+  buildResources: assets
+
+files:
+  - dist/**/*
+  - main/**/*
+  - preload/**/*
+  - services/**/*
+  - database/**/*
+  - runner/windows-runner/*.exe
+  - package.json
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  icon: assets/icon.ico
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: TurboCode IDE
+  uninstallDisplayName: TurboCode IDE Uninstaller
