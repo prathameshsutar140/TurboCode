@@ -19,7 +19,8 @@ if (apiKey) {
   }
 }
 
-export type AIAssistAction = 'explain_code' | 'explain_error' | 'optimize' | 'generate_practice';
+import { AIAssistAction } from '../src/types.js';
+export type { AIAssistAction };
 
 export async function askAIAssistant(
   action: AIAssistAction,

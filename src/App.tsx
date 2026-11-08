@@ -18,8 +18,8 @@ import {
   DetectedCompiler,
   ExampleProgram,
   HistoryItem,
+  DEFAULT_SETTINGS,
 } from './types.js';
-import { DEFAULT_SETTINGS } from '../services/storage-service.js';
 
 const INITIAL_FILE: SourceFile = {
   id: 'file-1',

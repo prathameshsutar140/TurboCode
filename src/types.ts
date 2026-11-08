@@ -120,3 +120,33 @@ export interface ProjectFolder {
   files: SourceFile[];
   mainFile: string;
 }
+
+export type AIAssistAction = 'explain_code' | 'explain_error' | 'optimize' | 'generate_practice';
+
+export const DEFAULT_SETTINGS: IDESettings = {
+  theme: 'classic',
+  fontSize: 15,
+  fontFamily: "'Fira Code', 'Consolas', 'Courier New', monospace",
+  tabSize: 4,
+  wordWrap: false,
+  minimap: true,
+  lineNumbers: true,
+  autoSave: false,
+  compiler: {
+    cCompiler: 'gcc',
+    cppCompiler: 'g++',
+    cStandard: 'c17',
+    cppStandard: 'c++20',
+    optimization: '-O0',
+    warningFlags: ['-Wall', '-Wextra'],
+    customFlags: '',
+    includePaths: [],
+  },
+  runner: {
+    timeoutMs: 5000,
+    memoryLimitMb: 128,
+    sandboxMode: 'restricted',
+  },
+  confirmBeforeClose: true,
+};
+

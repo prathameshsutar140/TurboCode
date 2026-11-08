@@ -2,42 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { IDESettings, HistoryItem, ProjectFolder } from '../src/types.js';
+import { IDESettings, HistoryItem, ProjectFolder, DEFAULT_SETTINGS } from '../src/types.js';
+export { DEFAULT_SETTINGS };
 
 const execPromise = promisify(exec);
 const DATA_DIR = path.resolve(process.cwd(), '.turbocode_data');
 const DB_FILE = path.join(DATA_DIR, 'turbocode.sqlite');
 const SCHEMA_FILE = path.resolve(process.cwd(), 'database/schema.sql');
 const BACKUP_JSON_FILE = path.join(DATA_DIR, 'store.json');
-
-// Default initial settings
-export const DEFAULT_SETTINGS: IDESettings = {
-  theme: 'classic', // Default: Classic Turbo C++ blue!
-  fontSize: 15,
-  fontFamily: "'Fira Code', 'Consolas', 'Courier New', monospace",
-  tabSize: 4,
-  wordWrap: false,
-  minimap: true,
-  lineNumbers: true,
-  autoSave: false,
-  compiler: {
-    cCompiler: 'gcc',
-    cppCompiler: 'g++',
-    cStandard: 'c17',
-    cppStandard: 'c++20',
-    optimization: '-O0',
-    warningFlags: ['-Wall', '-Wextra'],
-    customFlags: '',
-    includePaths: [],
-  },
-  runner: {
-    timeoutMs: 5000,
-    memoryLimitMb: 128,
-    sandboxMode: 'restricted',
-  },
-  confirmBeforeClose: true,
-};
-
 interface DataStore {
   settings: IDESettings;
   history: HistoryItem[];

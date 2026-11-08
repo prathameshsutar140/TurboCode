@@ -10,8 +10,7 @@ import {
   Code,
   BookMarked,
 } from 'lucide-react';
-import { AIAssistAction } from '../../services/ai-service.js';
-import { ThemeMode } from '../types.js';
+import { ThemeMode, AIAssistAction } from '../types.js';
 
 interface RightPanelProps {
   theme: ThemeMode;
